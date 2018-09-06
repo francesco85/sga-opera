@@ -1,0 +1,36 @@
+@mixin paddingAllSides($val){
+    padding-top:$val;
+    padding-right:$val;
+    padding-bottom:$val;
+    padding-left:$val;
+}
+@mixin absoluteCenter{
+    position: absolute;
+    top: 50%;left:50%;
+    transform: translate(-50%,-50%);
+}
+
+
+@mixin respond($bpoint) {
+    @if $bpoint == phone-small {
+        @media only screen and (max-width: 37.5em){@content};
+    } //600
+    @if $bpoint == phone {
+        @media only screen and (max-width: 37.5em){@content};
+    } //600
+    @if $bpoint == tablet {
+        @media only screen and (max-width: 56.25em){@content};
+    } //900
+    @if $bpoint == lands {
+        @media only screen and (max-width: 75em){@content};
+    } //1200
+    @if $bpoint == desktop {
+        @media only screen and (max-width: 87.5em){@content};
+    } //1400
+    @if $bpoint == desktop-medium {
+        @media only screen and (max-width: 100em){@content};
+    } //1800
+    @if $bpoint == desktop-large {
+        @media only screen and (min-width: 112.5em){@content};
+    } // 1800 +
+} 

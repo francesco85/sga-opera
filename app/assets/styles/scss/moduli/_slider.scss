@@ -1,0 +1,53 @@
+.slider{
+    position: relative;
+    overflow: hidden;
+//    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &__slide{
+        width: 100%;
+        height: 200px!important;
+        position: relative;
+        font-size: 2.5rem;
+        display: flex!important;
+        flex-flow: row wrap!important;
+        align-items: center;
+        justify-content: center; 
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    &__overlay{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        justify-content: center;
+        /*&:after{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image:-webkit-linear-gradient(rgba(0, 0, 0, 0.9), rgba(255, 255, 255, 0.33));
+            background-image:-o-linear-gradient(rgba(0, 0, 0, 0.9), rgba(255, 255, 255, 0.33));
+            background-image:linear-gradient(rgba(0, 0, 0, 0.9), rgba(255, 255, 255, 0.33));
+        }*/
+    }
+    &__title{
+        color: #fff;
+        /*position: absolute;
+        top: 50%;left: 50%;*/
+        z-index: 999;
+        text-align: center;
+    }
+    &__azienda{
+        height: 100%!important;
+        min-height: 30rem;
+    }
+}
+.slick-vertical .slick-slide{
+    border: 0;
+}

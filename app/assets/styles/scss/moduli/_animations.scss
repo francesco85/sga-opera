@@ -1,0 +1,54 @@
+@keyframes preload{
+    0%{transform: translate(-50%,-50%) scale(0);}
+    
+    100%{transform: translate(-50%,-50%) scale(1);}
+} 
+@keyframes treno{
+    from{transform: scale(0);}
+    to{transform: scale(1);}
+}
+
+@keyframes cornice{
+    from{
+        stroke-dasharray: 10000;
+        stroke-dashoffset: 10000;
+    }
+    to{
+        stroke-dasharray: 10000;
+        stroke-dashoffset: 0; 
+    }
+}
+
+@keyframes mask {
+    from{
+        height: 0;
+    }
+    to{
+        height: 100%;
+    }
+}
+
+@keyframes logo{
+    from{
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 1000;
+    }
+    to{
+        stroke-dasharray: 1000;
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes arrow{
+    from{
+        opacity:0;
+        visibility: hidden;
+        bottom: 2rem;
+        
+    }
+    to{
+        opacity: 1;
+        visibility: visible;
+        bottom:1rem;
+    }
+}
