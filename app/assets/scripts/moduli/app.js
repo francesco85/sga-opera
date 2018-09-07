@@ -1,4 +1,4 @@
-(function($){
+import $ from 'jquery';
     //caricamento preload
     $('.preload__img').addClass('animation');
     $(document).ready(function(){  
@@ -124,28 +124,5 @@
                 $("#scene").load(document.location.href + "#scene");
             }
         });
-        //carichiamo slider
-        /*$('.slider1').slick({
-            autoplay:true,
-            autoplaySpeed:7000, 
-            vertical:true,
-            dots:false,
-            slidesToShow: 1,
-            arrows:false
-        });
-        $('.slider2').slick({
-            autoplay:true,
-            autoplaySpeed:4000, 
-            dots:false,
-            slidesToShow: 1,
-            arrows:false
-        });
-        $('.slider3').slick({
-            autoplay:true,
-            autoplaySpeed:5000, 
-            dots:false,
-            slidesToShow: 1,
-            arrows:false
-        });*/
+       
     });
-})(jQuery);

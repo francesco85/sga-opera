@@ -1,10 +1,10 @@
 const path = require('path');
 module.exports = {
     mode:'development',
-    entry:'./js/main.js',
+    entry:'./app/assets/scripts/Main.js',
     output:{
-        path: path.resolve(__dirname, './temp/scripts'),
-        filename: 'main.js'
+        path: path.resolve(__dirname, 'app/temp/scripts'),
+        filename: '[name].js'
     },
     module:{
         rules:[
@@ -12,8 +12,7 @@ module.exports = {
                 test:/\.js$/,
                 exclude:/node_modules/,
                 use:[
-                    {
-                        loader:'babel-loader',
+                    {   loader:'babel-loader',
                         options:{
                             presets:['@babel/preset-env']
                         }
@@ -21,5 +20,8 @@ module.exports = {
                 ]
             }
         ] 
-    }
+    },
+     resolve: {
+       extensions: ['.js']
+     }
 };

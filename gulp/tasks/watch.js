@@ -14,7 +14,7 @@ gulp.task('watch',function(){
     watch('./app/*.html', function(){
         browSync.reload();
     });
-    watch('./app/assets/scripts/js/**/*.js',function(){
+    watch('./app/assets/scripts/**/*.js',function(){
         gulp.start('scriptRefresh');
     });
 });

@@ -2,14 +2,16 @@
   "name": "sga",
   "version": "1.0.0",
   "description": "Sito SGA",
-  "main": "gulpfile.js",
-  "scripts": {},
+  "main": "index.js",
+  "scripts": {
+    "webpack": "webpack --display-error-details"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zurb/foundation-sites-template.git"
+    "url": "https://github.com/francesco85/sga-opera"
   },
   "author": "",
-  "license": "MIT",
+  "license": "ISC",
   "bugs": {
     "url": "https://github.com/francesco85/sga-opera/issues"
   },
@@ -17,6 +19,7 @@
     "bootstrap-sass": "^3.3.7",
     "jquery": ">=3.0.0",
     "motion-ui": "~1.2.2",
+    "parallax-js": "^3.1.0",
     "slick-carousel": "^1.8.1",
     "what-input": "^4.1.3"
   },
@@ -33,7 +36,6 @@
     "gulp-postcss": "^7.0.1",
     "gulp-sass": "^2.3.2",
     "gulp-watch": "^5.0.0",
-    "parallax-js": "^3.1.0",
     "postcss": "^6.0.23",
     "postcss-cli": "^5.0.1",
     "postcss-scss": "^1.0.6",

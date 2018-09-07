@@ -1,11 +1,26 @@
-var gulp = require('gulp'),
-    webpack = require('webpack');
+var gulp = require('gulp');
+const    webpack = require('webpack');
+const config = require('../../webpack.config.js');
 gulp.task('scripts',function(callback){
-    webpack('../../webpack.config.js',function(err,stats){
-        if(err){
-            console.log(err.toString());
+    webpack(config,function(err,stats){
+        if (err) {
+            
+            console.error(err.stack || err);
+            if (err.details) {
+                console.error(err.details);
+            }
+            return;
         }
-        console.log(stats.toString());
-        callback();
+         const info = stats.toJson();
+
+  if (stats.hasErrors()) {
+    console.error(info.errors);
+  }
+
+  if (stats.hasWarnings()) {
+    console.warn(info.warnings);
+  }
+        
     });
+    callback();
 });
