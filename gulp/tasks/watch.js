@@ -8,7 +8,7 @@ gulp.task('watch',function(){
             baseDir:'./app'
         }
     });
-    watch('./app/assets/styles/scss/**/*.scss',function(){
+    watch('./scss/**/*.scss',function(){
         gulp.start('cssInject');
     });
     watch('./app/*.html', function(){
@@ -20,8 +20,8 @@ gulp.task('watch',function(){
 });
 
 gulp.task('cssInject',['styles'],function(){
-    return gulp.src('./app/temp/styles/style.css')
-        .pipe(browSync.stream());
+    return gulp.src('./app/temp/styles/app.css')
+        .pipe(browSync.stream()); 
 });
 
 gulp.task('scriptRefresh',['scripts'],function(){

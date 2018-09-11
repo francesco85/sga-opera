@@ -5,7 +5,8 @@ var gulp = require('gulp'),
     
 
 gulp.task('styles', function() {
-    return gulp.src("./app/assets/styles/scss/**/*.scss")
+    console.log('wazzup');
+    return gulp.src("./scss/**/*.scss")
         .pipe(sass().on('error', sass.logError))
         .pipe(postcss([autoprefixer]))
         .on('error',function(err){
@@ -13,4 +14,4 @@ gulp.task('styles', function() {
             this.emit('end');
         })
         .pipe(gulp.dest("./app/temp/styles"));
-});
+}); 
