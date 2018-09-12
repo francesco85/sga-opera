@@ -7,11 +7,10 @@ class WaypointScroll {
         this.prodotti = els;
         this.offsetP =offs;
         this.prodottiWaypoints();
-        console.log(els);
     }
     
     prodottiWaypoints(){
-            var that = this;
+            /*var that = this;
             
                 console.log(that.target[0]);
                 new Waypoint({
@@ -20,11 +19,44 @@ class WaypointScroll {
                             if(direction === 'down'){   
                                 that.prodotti.removeClass('explode');
                             }else{
-//                                that.prodotti.addClass('explode'); 
                             }
                     },
                     offset: that.offsetP
-                });
+                });*/
+        
+        var layer = $('.layer');
+        var sezioneAz = $('#azienda');
+        var heightFromTop;
+        var scrollFromTop;
+        var delta;
+            $(window).on('scroll',function(){
+
+                 heightFromTop = sezioneAz.offset().top;
+                 scrollFromTop = $(window).scrollTop();
+                 delta = scrollFromTop - heightFromTop;
+
+                if(delta > 0){
+                    layer.each(function(){
+                        var link = $('.layer__link');
+                        var that = $(this);
+                        var categoria = that.data('category');
+                        that.find(link).html(categoria);
+                        that.find('img').ready(function(){
+                            that.removeClass('explode');
+                        });
+                            setTimeout(function(){that.css({'transition':'none'});},1000);
+                    });
+                }else{
+                     
+                }
+            });
+        // ricarichiamo il nostro div con le categorie di prodotti
+        $(window).on('resize',function(){
+            if($(window).innerWidth < 1200){ 
+                //ajax solo se si dovesse ricare il contenuto
+                $("#scene").load(document.location.href + "#scene");
+            }
+        });
             
     }
 }
